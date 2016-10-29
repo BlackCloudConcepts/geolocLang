@@ -12,6 +12,12 @@ Angular2 / React - Geolocation, What3Words, Google Translate, Maps Application
 
 - Google Maps API : https://developers.google.com/maps/
 
+
+Libraries
+
+- http://valor-software.com/ng2-bootstrap/#/
+
+
 Utilities
 
 - Manage node versions easily : https://github.com/tj/n
