@@ -1,5 +1,22 @@
 # GeolocLang
+
 Angular2 / React - Geolocation, What3Words, Google Translate, Maps Application
+
+- What 3 Words : http://developer.what3words.com/
+
+- Google Translate : https://cloud.google.com/translate/
+
+- ngReact : https://github.com/ngReact/ngReact 
+
+- React w/ Angular 2 : http://www.syntaxsuccess.com/viewarticle/integrating-react-with-angular-2.0
+
+- Google Maps API : https://developers.google.com/maps/
+
+Utilities
+
+- Manage node versions easily : https://github.com/tj/n
+
+-----
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
