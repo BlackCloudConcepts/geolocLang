@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
+import { WhatThreeWordsService } from './services/what-three-words/what-three-words.service';
+import { ConfigService } from './services/config/config.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,7 @@ import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
     HttpModule,
     AlertModule
   ],
-  providers: [],
+  providers: [WhatThreeWordsService, ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
