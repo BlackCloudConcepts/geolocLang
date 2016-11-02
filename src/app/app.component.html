@@ -1,5 +1,7 @@
 <h1>
   {{title}}
 </h1>
-<!--<ngb-alert dismissable="true" type="info">Is this alert working?</ngb-alert>-->
+<a routerLink="/" routerLinkActive="active">Home</a>
+<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
 <alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+<router-outlet></router-outlet>
