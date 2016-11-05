@@ -1,0 +1,16 @@
+.body {
+  margin: 10px;
+}
+
+.card {
+  background-color: #e1e5ed;
+  padding: 10px;
+  margin: 10px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 25px;
+  border-color: #3f87fc;
+  border-width: 1px;
+  border-style: solid;
+}

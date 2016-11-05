@@ -1,7 +1,9 @@
-<h1>
-  {{title}}
-</h1>
-<a routerLink="/" routerLinkActive="active">Home</a>
-<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-<alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
-<router-outlet></router-outlet>
+<div ngClass="body">
+  <h1>
+    {{title}}
+  </h1>
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+  <alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+  <router-outlet></router-outlet>
+</div>

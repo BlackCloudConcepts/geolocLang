@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private configService: ConfigService
   ) {
+/*
     let _this = this;
     setTimeout(function(){ 
       _this.configService.getConfig()
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
           _this.init();
         });
     }, 3000);
+*/
   }
 
   ngOnInit() {
