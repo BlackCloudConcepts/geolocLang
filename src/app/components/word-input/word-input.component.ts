@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WhatThreeWordsService } from '../../services/what-three-words/what-three-words.service';
 import { ConfigService } from '../../services/config/config.service';
-import {EmitterService} from '../../services/emitter/emitter.service';
 
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -13,40 +12,37 @@ export interface AppState {
 }
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-word-input',
+  templateUrl: './word-input.component.html',
+  styleUrls: ['./word-input.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class WordInputComponent implements OnInit {
 
   config:any = {};
-  locations: Observable<any>;
+  form:any = {};
 
   constructor(
     private whatThreeWordsService: WhatThreeWordsService,
     private configService: ConfigService,
     private store: Store<AppState>
-  ) {
-    this.locations = store.select('locations');
+  ) { 
+    this.form = {
+      word1: '',
+      word2: '',
+      word3: ''
+    }
   }
 
   ngOnInit() {
-    console.log('dashboard');
-    EmitterService.get('123').subscribe(value => console.log(value));
     this.configService.getConfig()
       .subscribe(res => {
         this.config = res;
-        console.log(this.config);
-        this.startObserving();
-        this.init();
       });
   }
 
-  init() {
-    this.whatThreeWordsService.getLatLong('index.home.raft', this.config).subscribe(
+  submitWords() {
+    this.whatThreeWordsService.getLatLong(this.form.word1+'.'+this.form.word2+'.'+this.form.word3, this.config).subscribe(
       data => {
-        // Emit list event
-      //    EmitterService.get(this.listId).emit(comments);
         console.log(data);
         this.store.dispatch({ type: SET, payload: data.geometry });
       },
@@ -57,10 +53,4 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  startObserving() {
-    this.store.subscribe(val => {
-      console.log('subscribed and got store value');
-      console.log(val);
-    });  
-  }
 }

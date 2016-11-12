@@ -1,21 +1,32 @@
+// @angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
-
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
-import { AppComponent } from './app.component';
+// @ngrx
+import { StoreModule } from '@ngrx/store';
+
+// bootstrap
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
+import { AppComponent } from './app.component';
+
+// services
 import { WhatThreeWordsService } from './services/what-three-words/what-three-words.service';
 import { ConfigService } from './services/config/config.service';
 
+// components
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MapComponent } from './components/map/map.component';
+
+// reducers
+import { locationsReducer } from './reducers/locations';
+import { WordInputComponent } from './components/word-input/word-input.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +34,8 @@ import { MapComponent } from './components/map/map.component';
     HomeComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    MapComponent
+    MapComponent,
+    WordInputComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +47,8 @@ import { MapComponent } from './components/map/map.component';
       { path: 'dashboard/:startaddr', component: DashboardComponent },
       { path: '', component: HomeComponent },
       { path: '**', component: PageNotFoundComponent }
-    ])
+    ]),
+    StoreModule.provideStore({ locations: locationsReducer })
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
