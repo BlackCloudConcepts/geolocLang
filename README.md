@@ -12,6 +12,12 @@ Angular2 / React - Geolocation, What3Words, Google Translate, Maps Application
 
 - Google Maps API : https://developers.google.com/maps/
 
+- RxJS powered state management for Angular applications, inspired by Redux - https://github.com/ngrx/store
+
+- Comprehensive Introduction to @ngrx/store - https://gist.github.com/btroncone/a6e4347326749f938510
+
+- Build a Better Angular 2 Application with Redux and ngrx - http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/
+
 
 Libraries
 
