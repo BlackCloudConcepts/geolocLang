@@ -20,6 +20,7 @@ export class WordInputComponent implements OnInit {
 
   config:any = {};
   form:any = {};
+  locations: any;
 
   constructor(
     private whatThreeWordsService: WhatThreeWordsService,
@@ -31,6 +32,7 @@ export class WordInputComponent implements OnInit {
       word2: '',
       word3: ''
     }
+    this.locations = store.select('locations');
   }
 
   ngOnInit() {
@@ -44,7 +46,7 @@ export class WordInputComponent implements OnInit {
     this.whatThreeWordsService.getLatLong(this.form.word1+'.'+this.form.word2+'.'+this.form.word3, this.config).subscribe(
       data => {
         console.log(data);
-        this.store.dispatch({ type: SET, payload: data.geometry });
+        this.locations.dispatch({ type: SET, payload: data.geometry });
       },
       err => {
         // Log errors if any

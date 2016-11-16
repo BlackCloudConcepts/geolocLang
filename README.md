@@ -18,6 +18,10 @@ Angular2 / React - Geolocation, What3Words, Google Translate, Maps Application
 
 - Build a Better Angular 2 Application with Redux and ngrx - http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/
 
+- ngrx/dev-tools - https://github.com/ngrx/store-devtools
+
+- Chrome Extension for dev-tools  - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+
 
 Libraries
 

@@ -20,7 +20,8 @@ export interface AppState {
 export class DashboardComponent implements OnInit {
 
   config:any = {};
-  locations: Observable<any>;
+  //locations: Observable<any>;
+  locations: any;
 
   constructor(
     private whatThreeWordsService: WhatThreeWordsService,
@@ -47,8 +48,7 @@ export class DashboardComponent implements OnInit {
       data => {
         // Emit list event
       //    EmitterService.get(this.listId).emit(comments);
-        console.log(data);
-        this.store.dispatch({ type: SET, payload: data.geometry });
+        this.locations.dispatch({ type: SET, payload: data.geometry });
       },
       err => {
         // Log errors if any
