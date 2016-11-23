@@ -4,6 +4,8 @@ import {EmitterService} from '../../services/emitter/emitter.service';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
+import { Map } from 'immutable';
+
 declare var google: any;
 
 export interface AppState {
@@ -49,9 +51,15 @@ export class MapComponent implements OnInit {
   startObserving() {
     this.locations.subscribe(val => {
       console.log('subscribed in map and got store value');
-      console.log(val);
       if (val !== {}){
-        this.setMap(val.latitude, val.longitude);
+        var myList = val.get('locations');
+        if (myList) {
+          var firstObj = myList.first();
+          console.log(firstObj.locs);
+          var locObj = myList.last();
+          console.log(locObj.locs);
+          this.setMap(locObj.locs.lat, locObj.locs.lng);
+        }
       }
     });
   }

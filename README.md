@@ -22,6 +22,12 @@ Angular2 / React - Geolocation, What3Words, Google Translate, Maps Application
 
 - Chrome Extension for dev-tools  - https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 
+- immutable js - https://facebook.github.io/immutable-js/
+
+- typed-immutable-record - https://github.com/rangle/typed-immutable-record
+
+- npm-watch - https://github.com/M-Zuber/npm-watch
+
 
 Libraries
 
