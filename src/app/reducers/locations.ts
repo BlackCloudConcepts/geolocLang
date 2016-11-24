@@ -7,7 +7,13 @@ export const UNSET = 'UNSET';
 export const RESET = 'RESET';
 
 export function setLocation(state, location) {
-  return state.set('locations', List(location));
+  var existingList = state.get('locations');
+  if (existingList) {
+    var mergedList = existingList.concat(List(location));
+    return state.set('locations', mergedList);
+  } else {
+    return state.set('locations', List(location));
+  }
 }
 
 export const locationsReducer: ActionReducer<any> = (state: any = Map(), action: Action) => {
@@ -23,7 +29,7 @@ export const locationsReducer: ActionReducer<any> = (state: any = Map(), action:
             }
             return state;
 */
-            return setLocation(state, [{"locs": action.payload}]);
+            return setLocation(state, [action.payload]);
         case UNSET:
             state = {};
             return state;

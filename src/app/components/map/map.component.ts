@@ -54,11 +54,8 @@ export class MapComponent implements OnInit {
       if (val !== {}){
         var myList = val.get('locations');
         if (myList) {
-          var firstObj = myList.first();
-          console.log(firstObj.locs);
           var locObj = myList.last();
-          console.log(locObj.locs);
-          this.setMap(locObj.locs.lat, locObj.locs.lng);
+          this.setMap(locObj.lat, locObj.lng);
         }
       }
     });
