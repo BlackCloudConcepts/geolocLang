@@ -46,6 +46,9 @@ export class WordInputComponent implements OnInit {
     this.whatThreeWordsService.getLatLong(this.form.word1+'.'+this.form.word2+'.'+this.form.word3, this.config).subscribe(
       data => {
         console.log(data);
+        data.geometry.word1 = this.form.word1;
+        data.geometry.word2 = this.form.word2;
+        data.geometry.word3 = this.form.word3;
         this.locations.dispatch({ type: SET, payload: data.geometry });
       },
       err => {
