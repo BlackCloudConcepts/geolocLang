@@ -2,7 +2,7 @@
 
 Angular2 / React - Geolocation, What3Words, Google Translate, Maps Application
 
-- What 3 Words : http://developer.what3words.com/
+- What 3 Words : http://developer.what3words.com/ (obtain API key here)
 
 - Google Translate : https://cloud.google.com/translate/
 
@@ -40,6 +40,14 @@ Utilities
 
 Rebuild / Watch
 - npm run watch
+
+Create config.json
+- Add src/config.json with the key you obtained at http://developer.what3words.com/
+```
+{
+"what_three_words_api_key" : "YOURKEYHERE"
+}
+``` 
 
 ------
 
